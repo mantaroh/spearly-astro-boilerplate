@@ -1,6 +1,13 @@
+![Group 1](https://user-images.githubusercontent.com/3241026/206891849-a1373663-7ce8-4f57-a416-c506fb0d351f.png)
+
+
 # Spearly meets Astro 🚀
 
 このレポジトリは、Spearly CMS のコンテンツを Astro を使って静的サイトジェネレートするプロジェクトです。
+
+以下のボタンから自身のレポジトリにコピー＆Netlifyデプロイが出来ます。
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)][deploy]
 
 ## 利用方法
 
