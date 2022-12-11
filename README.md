@@ -5,7 +5,7 @@
 
 このレポジトリは、Spearly CMS のコンテンツを Astro を使って静的サイトジェネレートするプロジェクトです。
 
-以下のボタンから自身のレポジトリにコピー＆Netlifyデプロイが出来ます。
+以下のボタンから自身のレポジトリにコピー＆Netlifyデプロイが出来ます。(実行前に一度 [Netlify](https://app.netlify.com/login)にアクセスして、アカウント認証をしておくことをお勧めします。じゃないと失敗するかもしれません)
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/mantaroh/spearly-astro-boilerplate)
 
