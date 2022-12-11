@@ -7,7 +7,7 @@
 
 以下のボタンから自身のレポジトリにコピー＆Netlifyデプロイが出来ます。
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)][deploy]
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/mantaroh/spearly-astro-boilerplate)
 
 ## 利用方法
 
