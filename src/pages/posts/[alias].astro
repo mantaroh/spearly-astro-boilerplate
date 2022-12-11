@@ -1,0 +1,42 @@
+---
+import { spearlyApiClient } from "../../lib/spearly"; 
+
+export async function getStaticPaths() {
+    const contents = await spearlyApiClient.getList("blog")
+    const pages = contents.data.map((content => {
+        const title = content.attributes.fields.data.find(f => f.attributes.identifier === "title")
+        const description = content.attributes.fields.data.find(f => f.attributes.identifier === "description")
+        const date = content.attributes.fields.data.find(f => f.attributes.identifier === "date")
+        const image = content.attributes.fields.data.find(f => f.attributes.identifier === "image")
+        const body = content.attributes.fields.data.find(f => f.attributes.identifier === "body")
+        const alias = content.attributes.contentAlias
+        return {
+            params: { alias },
+            props: {
+                title: title?.attributes.value,
+                description: description?.attributes.value,
+                date: date?.attributes.value,
+                image: image?.attributes.value,
+                body: body?.attributes.value,
+            },
+        }
+    }))
+    return pages;
+}
+
+const { title, description, date, image, body } = Astro.props;
+---
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{title}</title>
+    </head>
+  <body>
+    <img src={`${image}`} alt={`${description}`}>
+    <h1>{title}</h1>
+    <time>{date}</time>
+    <article set:html={body} />
+  </body>
+</html>

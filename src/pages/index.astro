@@ -1,0 +1,43 @@
+---
+import { spearlyApiClient } from "../lib/spearly"
+
+const contents = await spearlyApiClient.getList("blog")
+const posts = contents.data.map(c => {
+	const title = c.attributes.fields.data.find(f => f.attributes.identifier === "title")
+	const description = c.attributes.fields.data.find(f => f.attributes.identifier === "description")
+	const date = c.attributes.fields.data.find(f => f.attributes.identifier === "date")
+	const image = c.attributes.fields.data.find(f => f.attributes.identifier === "image")
+	const alias = c.attributes.contentAlias
+	return {
+		title: title?.attributes.value,
+		alias,
+		description: description?.attributes.value,
+		date: date?.attributes.value,
+		image: image?.attributes.value
+	}
+})
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+</head>
+<body>
+    <h1>My Blog</h1>
+    <ul>
+      {posts.map((post) => (
+        <li>
+		  <img src={`${post.image}`} alt={`${post.description}`} />
+          <a href={`/posts/${post.alias}/`}>
+            <h2>{post.title}</h2>
+          </a>
+          <time>{post.date}</time>
+          <p>{post.description}</p>
+        </li>
+      ))}
+    </ul>
+</body>
+</html>
