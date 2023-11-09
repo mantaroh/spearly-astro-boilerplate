@@ -11,7 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@spearly/sdk-js": "^0.5.0",
+    "@spearly/sdk-js": "^2.0.2",
     "astro": "^1.6.14"
   }
 }
