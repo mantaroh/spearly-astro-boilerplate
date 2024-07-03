@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@spearly/sdk-js": "^2.0.2",
-    "astro": "^1.6.14"
+    "astro": "^4.11.4"
   }
 }
